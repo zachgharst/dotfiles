@@ -1,0 +1,33 @@
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
+
+alias sudo='sudo '
+alias please="sudo"
+alias mv="mv -i"
+alias rm="rm -i"
+alias cp="cp -i"
+
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
+
+alias rtw="sudo grub-reboot 4 && sudo reboot"
+
+alias myip="curl http://ipecho.net/plain; echo"
+alias myips="ifconfig -a | grep -o 'inet6\? \(addr:\)\?\s\?\(\(\([0-9]\+\.\)\{3\}[0-9]\+\)\|[a-fA-F0-9:]\+\)' | awk '{ sub(/inet6? (addr:)? ?/, \"\"); print }'"
+
+alias gs="git status"
+alias ga="git add"
+alias gc="git commit"
+alias gac="git add . && git commit"
+alias graphme="git log --oneline --graph --decorate"
+
+alias '?'="ddgr"
+
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
+
+alias path='echo -e ${PATH//:/\\n}'

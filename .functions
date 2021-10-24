@@ -1,0 +1,12 @@
+function ts-node() {
+	npm run ts-node -- $1
+}
+
+function mkcd takedir() {
+  mkdir -p $@ && cd ${@:$#}
+}
+
+function takegit() {
+  git clone "$1"
+  cd "$(basename ${1%%.git})"
+}
