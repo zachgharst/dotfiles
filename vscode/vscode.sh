@@ -11,7 +11,6 @@ sudo apt install code
 
 # Install VSCode extensions
 code --install-extension cmstead.js-codeformer
-code --install-extension CoenraadS.bracket-pair-colorizer
 code --install-extension DavidAnson.vscode-markdownlint
 code --install-extension dbaeumer.vscode-eslint
 code --install-extension donjayamanne.githistory

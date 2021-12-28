@@ -1,0 +1,59 @@
+{
+  "editor.fontSize": 12,
+  "window.menuBarVisibility": "classic",
+  "workbench.statusBar.visible": true,
+  "workbench.activityBar.visible": true,
+  "editor.minimap.enabled": false,
+  "editor.suggestSelection": "first",
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  "workbench.startupEditor": "welcomePage",
+  "editor.renderWhitespace": "all",
+  "workbench.editorAssociations": {
+    "*.ipynb": "jupyter.notebook.ipynb"
+  },
+  "security.workspace.trust.untrustedFiles": "open",
+  "[javascript]": {
+    "editor.tabSize": 2
+  },
+  "[http]": {
+    "editor.tabSize": 2,
+    "editor.quickSuggestions": {
+      "other": true,
+      "comments": false,
+      "strings": true
+    }
+  },
+  "git.confirmSync": false,
+  "[typescript]": {
+    "editor.tabSize": 2
+  },
+  "[json]": {
+    "editor.tabSize": 2,
+    "editor.quickSuggestions": {
+      "strings": true
+    },
+    "editor.suggest.insertMode": "replace",
+    "gitlens.codeLens.scopes": [
+      "document"
+    ]
+  },
+  "[typescriptreact]": {
+    "editor.tabSize": 2
+  },
+  "vim.insertModeKeyBindings": [
+    {
+      "before": [
+        "j",
+        "j"
+      ],
+      "after": [
+        "<Esc>"
+      ]
+    }
+  ],
+  "workbench.editor.untitled.hint": "hidden",
+  "[javascriptreact]": {
+    "editor.tabSize": 2
+  },
+  "window.zoomLevel": 1
+}
