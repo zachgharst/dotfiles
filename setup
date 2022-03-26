@@ -1,0 +1,11 @@
+#!/bin/sh
+
+set -e
+
+sudo apt install git;
+git pull origin master;
+
+ln -sf "$PWD/.bashrc" "$HOME/.bashrc"
+ln -sf "$PWD/.inputrc" "$HOME/.inputrc"
+ln -sf "$PWD/.vimrc" "$HOME/.vimrc"
+

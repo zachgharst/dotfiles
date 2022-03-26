@@ -1,0 +1,7 @@
+"\C-l": clear-screen
+"\C-e": end-of-line
+"\C-a": beginning-of-line
+"\C-p": previous-history
+"\C-n": next-history
+
+set bell-style none
