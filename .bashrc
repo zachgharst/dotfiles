@@ -7,9 +7,10 @@ esac
 
 # ----------------------------------------- env variables -----------------------------------------
 
+export GITHUB_USERNAME="ZDGharst"
 export REPOS="$HOME/Repos"
 export DOCUMENTS="$HOME/Documents"
-export DOTFILES="$REPOS/dotfiles"
+export DOTFILES="$REPOS/github.com/$GITHUB_USERNAME/dotfiles"
 export EDITOR="vim"
 export BROWSER=lynx
 export TERM=xterm-256color
@@ -53,6 +54,9 @@ alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
 alias .....="cd ../../../.."
+alias dot='cd $DOTFILES'
+alias gh="cd $REPOS/github.com/ZDGharst"
+alias repos="cd $REPOS"
 
 alias sudo='sudo '
 alias please="sudo"
@@ -73,7 +77,8 @@ alias graphme="git log --oneline --graph --decorate"
 
 alias '?'="ddgr"
 alias chmox='chmod +x'
-alias dot='cd $DOTFILES'
+alias c='printf "\e[H\e[2J"'
+alias clear='printf "\e[H\e[2J"'
 alias myip="curl http://ipecho.net/plain; echo"
 alias myips="ifconfig -a | grep -o 'inet6\? \(addr:\)\?\s\?\(\(\([0-9]\+\.\)\{3\}[0-9]\+\)\|[a-fA-F0-9:]\+\)' | awk '{ sub(/inet6? (addr:)? ?/, \"\"); print }'"
 alias path='echo -e ${PATH//:/\\n}'
@@ -84,3 +89,5 @@ alias todo='$EDITOR $DOCUMENTS/todo.md'
 function mkcd() {
   mkdir -p $@ &&cd ${@:$#}
 }
+
+[[ -r "$HOME/.bashrc.work" ]] && source "$HOME/.bashrc.work"
