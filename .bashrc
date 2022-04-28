@@ -7,9 +7,10 @@ esac
 
 # ----------------------------------------- env variables -----------------------------------------
 
-export REPOS="$HOME/repos"
+export REPOS="$HOME/Repos"
+export DOCUMENTS="$HOME/Documents"
+export DOTFILES="$REPOS/dotfiles"
 export EDITOR="vim"
-export DOTFILES="$HOME/.dotfiles"
 export BROWSER=lynx
 export TERM=xterm-256color
 
@@ -76,7 +77,8 @@ alias dot='cd $DOTFILES'
 alias myip="curl http://ipecho.net/plain; echo"
 alias myips="ifconfig -a | grep -o 'inet6\? \(addr:\)\?\s\?\(\(\([0-9]\+\.\)\{3\}[0-9]\+\)\|[a-fA-F0-9:]\+\)' | awk '{ sub(/inet6? (addr:)? ?/, \"\"); print }'"
 alias path='echo -e ${PATH//:/\\n}'
-alias todo='$EDITOR $HOME/todo.md'
+alias todo='$EDITOR $DOCUMENTS/todo.md'
+
 # ------------------------------------------- functions -------------------------------------------
 
 function mkcd() {
