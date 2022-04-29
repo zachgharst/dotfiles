@@ -15,6 +15,11 @@ export EDITOR="vim"
 export BROWSER=lynx
 export TERM=xterm-256color
 
+# go
+export GOROOT=/usr/local/go-1.18
+export GOPATH=$HOME/go
+export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
+
 # -------------------------------------------- history --------------------------------------------
 
 export HISTCONTROL=ignoreboth
