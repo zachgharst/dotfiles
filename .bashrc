@@ -73,6 +73,7 @@ alias ga="git add"
 alias gap="git add -p"
 alias gc="git commit"
 alias gac="git add . && git commit"
+alias gp="git push"
 alias graphme="git log --oneline --graph --decorate"
 
 alias '?'="ddgr"
