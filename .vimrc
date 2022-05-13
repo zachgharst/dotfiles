@@ -355,7 +355,7 @@ au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g
 "au BufWritePost ~/.vimrc so ~/.vimrc
 
 " functions keys
-map <F1> :set number!<CR> :set relativenumber!<CR>
+map <F1> :set number!<CR>
 nmap <F2> :call <SID>SynStack()<CR>
 set pastetoggle=<F3>
 map <F4> :set list!<CR>
