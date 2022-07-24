@@ -74,13 +74,13 @@ alias ls='ls -h --color=auto'
 alias ll='ls -alF'
 alias la='ls -A'
 
-alias gs="git status"
 alias ga="git add"
+alias gac="git add . && git commit"
 alias gap="git add -p"
 alias gc="git commit"
-alias gac="git add . && git commit"
 alias gp="git push"
 alias graphme="git log --oneline --graph --decorate"
+alias gs="git status"
 
 alias '?'="ddgr"
 alias chmox='chmod +x'
