@@ -7,13 +7,14 @@ esac
 
 # ----------------------------------------- env variables -----------------------------------------
 
-export GITHUB_USERNAME="ZDGharst"
-export REPOS="$HOME/Repos"
+export BROWSER=lynx
 export DOCUMENTS="$HOME/Documents"
 export DOTFILES="$REPOS/github.com/$GITHUB_USERNAME/dotfiles"
 export EDITOR="vim"
-export BROWSER=lynx
+export GITHUB_USERNAME="ZDGharst"
+export REPOS="/mnt/c/Repos"
 export TERM=xterm-256color
+export ZETTELS="$REPOS/github.com/$GITHUB_USERNAME/zettels"
 
 # go
 export GOROOT=/usr/local/go-1.18
