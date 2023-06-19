@@ -8,12 +8,13 @@ esac
 # ----------------------------------------- env variables -----------------------------------------
 
 export BROWSER=lynx
-export DOCUMENTS="$HOME/Documents"
-export DOTFILES="$REPOS/github.com/$GITHUB_USERNAME/dotfiles"
+export DOCUMENTS="$HOME/documents"
 export EDITOR="vim"
 export GITHUB_USERNAME="ZDGharst"
-export REPOS="/mnt/c/Repos"
+export REPOS="$HOME/repos"
 export TERM=xterm-256color
+
+export DOTFILES="$REPOS/github.com/$GITHUB_USERNAME/dotfiles"
 export ZETTELS="$REPOS/github.com/$GITHUB_USERNAME/zettels"
 
 # go

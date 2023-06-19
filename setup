@@ -2,9 +2,9 @@
 
 set -e
 
-sudo apt install neofetch
-sudo apt install git;
-git pull origin master;
+# sudo apt install neofetch
+sudo apt install git
+git pull origin master
 
 ln -sf "$PWD/.bashrc" "$HOME/.bashrc"
 ln -sf "$PWD/.inputrc" "$HOME/.inputrc"
@@ -14,5 +14,4 @@ wget https://go.dev/dl/go1.18.linux-amd64.tar.gz
 tar -xvf go1.18.linux-amd64.tar.gz
 mv go go-1.18
 sudo mv go-1.18 /usr/local
-rm go-1.18
 
