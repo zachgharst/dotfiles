@@ -18,7 +18,7 @@ export DOTFILES="$REPOS/github.com/$GITHUB_USERNAME/dotfiles"
 export ZETTELS="$REPOS/github.com/$GITHUB_USERNAME/zettels"
 
 # go
-export GOROOT=/usr/local/go-1.18
+export GOROOT=/usr/local/go
 export GOPATH=$HOME/go
 export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
 

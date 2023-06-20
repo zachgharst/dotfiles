@@ -2,16 +2,25 @@
 
 set -e
 
-# sudo apt install neofetch
+##### Install programs #####
+sudo apt update
+sudo apt install neofetch
 sudo apt install git
-git pull origin master
 
+##### Command line configs #####
+git config --global push.autoSetupRemote true
+git config --global user.name "Zach Gharst"
+
+##### Add RC symbolic links #####
+git pull origin master
 ln -sf "$PWD/.bashrc" "$HOME/.bashrc"
 ln -sf "$PWD/.inputrc" "$HOME/.inputrc"
+ln -sf "$PWD/.tmux.conf" "$HOME/.tmux.conf"
 ln -sf "$PWD/.vimrc" "$HOME/.vimrc"
 
-wget https://go.dev/dl/go1.18.linux-amd64.tar.gz
-tar -xvf go1.18.linux-amd64.tar.gz
-mv go go-1.18
-sudo mv go-1.18 /usr/local
+##### Install Go #####
+sudo rm -rf /usr/local/go
+wget https://go.dev/dl/go1.20.5.linux-amd64.tar.gz
+sudo tar -C /usr/local -xzf go1.20.5.linux-amd64.tar.gz
+rm go1.20.5.linux-amd64.tar.gz
 
