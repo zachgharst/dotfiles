@@ -57,14 +57,15 @@ endif
 match IncSearch '\s\+$'
 
 " enough for line numbers + gutter within 80 standard
-set textwidth=72
-"set colorcolumn=73
+set textwidth=80
+" set colorcolumn=80
+match ErrorMsg '\%>80v.\+'
 
 " replace tabs with spaces automatically
 set expandtab
 
 " disable relative line numbers, remove no to sample it
-set norelativenumber
+set relativenumber
 
 " makes ~ effectively invisible
 "highlight NonText guifg=bg
