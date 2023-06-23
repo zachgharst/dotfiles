@@ -106,6 +106,11 @@ function mkcd() {
 [[ -r "$HOME/.bashrc.work" ]] && source "$HOME/.bashrc.work"
 
 
+# ---------------------------------- complete ----------------------------------
+
+complete -C pomo pomo
+
+
 # ----------------------------------- colors -----------------------------------
 
 test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
