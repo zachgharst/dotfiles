@@ -3,11 +3,13 @@
 set -e
 
 ##### Install programs #####
+sudo add-apt-repository ppa:git-core/ppa
 sudo apt update
 sudo apt install neofetch
 sudo apt install git
 
 ##### Command line configs #####
+git config --global core.filemode false
 git config --global push.autoSetupRemote true
 git config --global user.name "Zach Gharst"
 
@@ -17,6 +19,7 @@ ln -sf "$PWD/.bashrc" "$HOME/.bashrc"
 ln -sf "$PWD/.inputrc" "$HOME/.inputrc"
 ln -sf "$PWD/.tmux.conf" "$HOME/.tmux.conf"
 ln -sf "$PWD/.vimrc" "$HOME/.vimrc"
+ln -sf "$PWD/.nvimrc" "$HOME/.nvimrc"
 
 ##### Install Go #####
 sudo rm -rf /usr/local/go
@@ -24,3 +27,6 @@ wget https://go.dev/dl/go1.20.5.linux-amd64.tar.gz
 sudo tar -C /usr/local -xzf go1.20.5.linux-amd64.tar.gz
 rm go1.20.5.linux-amd64.tar.gz
 
+##### Install Go programs #####
+go install github.com/rwxrob/pomo/cmd/pomo@latest
+pomo init
