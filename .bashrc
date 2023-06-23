@@ -5,7 +5,8 @@ case $- in
     *) return ;;
 esac
 
-# ----------------------------------------- env variables -----------------------------------------
+
+# -------------------------------- env variables -------------------------------
 
 export BROWSER=lynx
 export DOCUMENTS="$HOME/documents"
@@ -22,7 +23,8 @@ export GOROOT=/usr/local/go
 export GOPATH=$HOME/go
 export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
 
-# -------------------------------------------- history --------------------------------------------
+
+# ----------------------------------- history ----------------------------------
 
 export HISTCONTROL=ignoreboth
 export HISTSIZE=5000
@@ -31,7 +33,8 @@ export HISTFILESIZE=10000
 set -o vi
 shopt -s histappend
 
-# -------------------------------------------- prompt ---------------------------------------------
+
+# ----------------------------------- prompt -----------------------------------
 
 __ps1() {
   local P='$' dir="${PWD##*/}" B \
@@ -54,8 +57,9 @@ __ps1() {
 
 PROMPT_COMMAND="__ps1"
 
-# -------------------------------------------- aliases --------------------------------------------
-#                  (prefer exec scripts instead, which work from vim and subprocs)
+
+# ----------------------------------- aliases ----------------------------------
+#        (prefer exec scripts instead, which work from vim and subprocs)
 
 alias ..="cd .."
 alias ...="cd ../.."
@@ -92,10 +96,17 @@ alias myips="ifconfig -a | grep -o 'inet6\? \(addr:\)\?\s\?\(\(\([0-9]\+\.\)\{3\
 alias path='echo -e ${PATH//:/\\n}'
 alias todo='$EDITOR $DOCUMENTS/todo.md'
 
-# ------------------------------------------- functions -------------------------------------------
+
+# ---------------------------------- functions ---------------------------------
 
 function mkcd() {
   mkdir -p $@ &&cd ${@:$#}
 }
 
 [[ -r "$HOME/.bashrc.work" ]] && source "$HOME/.bashrc.work"
+
+
+# ----------------------------------- colors -----------------------------------
+
+test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+
