@@ -30,7 +30,7 @@ set tabstop=2
 " disable visual bell (also disable in .inputrc)
 set t_vb=
 
-let mapleader=","
+let mapleader=" "
 
 set softtabstop=2
 
@@ -380,6 +380,14 @@ nmap <leader>2 :set paste<CR>i
 nnoremap <up> <C-a>
 nnoremap <down> <C-x>
 
+" center cursor after big movement
+nnoremap <C-d> <C-d>zz
+nnoremap <C-u> <C-u>zz
+nnoremap <C-b> <C-b>zz
+nnoremap <C-f> <C-f>zz
+nnoremap n nzzzv
+nnoremap N Nzzzv
+
 " Set TMUX window name to name of file
 "au fileopened * !tmux rename-window TESTING
 
@@ -388,3 +396,6 @@ set rtp^=~/.vimpersonal
 set rtp^=~/.vimprivate
 set rtp^=~/.vimwork
 
+xnoremap <leader>p "_dP
+
+set showcmd
