@@ -380,10 +380,6 @@ nmap <leader>2 :set paste<CR>i
 nnoremap <up> <C-a>
 nnoremap <down> <C-x>
 
-" Better page down and page up
-noremap <C-n> <C-d>
-noremap <C-p> <C-b>
-
 " Set TMUX window name to name of file
 "au fileopened * !tmux rename-window TESTING
 
@@ -391,3 +387,4 @@ noremap <C-p> <C-b>
 set rtp^=~/.vimpersonal
 set rtp^=~/.vimprivate
 set rtp^=~/.vimwork
+
