@@ -28,6 +28,7 @@ set tabstop=2
 "#######################################################################
 
 " disable visual bell (also disable in .inputrc)
+set noerrorbells
 set t_vb=
 
 let mapleader=" "
@@ -399,3 +400,5 @@ set rtp^=~/.vimwork
 xnoremap <leader>p "_dP
 
 set showcmd
+
+set timeoutlen=3000
