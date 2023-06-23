@@ -11,7 +11,7 @@ esac
 export BROWSER=lynx
 export DOCUMENTS="$HOME/documents"
 export EDITOR="vim"
-export GITHUB_USERNAME="ZDGharst"
+export GITHUB_USERNAME="zdgharst"
 export REPOS="$HOME/repos"
 export TERM=xterm-256color
 
@@ -115,3 +115,5 @@ complete -C pomo pomo
 
 test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
 
+# --- autoadded WHY would you modify my bashrc Rust?
+. "$HOME/.cargo/env"
