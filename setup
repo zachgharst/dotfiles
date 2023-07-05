@@ -31,3 +31,8 @@ rm go1.20.5.linux-amd64.tar.gz
 ##### Install Go programs #####
 go install github.com/rwxrob/pomo/cmd/pomo@latest
 pomo init
+pomo delete interval
+
+go install github.com/zachgharst/emojimaker@latest
+go install github.com/zachghars/gittake@latest
+
