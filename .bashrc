@@ -11,7 +11,7 @@ esac
 export BROWSER=lynx
 export DOCUMENTS="$HOME/documents"
 export EDITOR="vim"
-export GITHUB_USERNAME="zdgharst"
+export GITHUB_USERNAME="zachgharst"
 export REPOS="$HOME/repos"
 export TERM=xterm-256color
 
@@ -66,7 +66,7 @@ alias ...="cd ../.."
 alias ....="cd ../../.."
 alias .....="cd ../../../.."
 alias dot='cd $DOTFILES'
-alias gh="cd $REPOS/github.com/ZDGharst"
+alias gh="cd $REPOS/github.com/$GITHUB_USERNAME"
 alias repos="cd $REPOS"
 
 alias sudo='sudo '
@@ -101,6 +101,11 @@ alias todo='$EDITOR $DOCUMENTS/todo.md'
 
 function mkcd() {
   mkdir -p $@ &&cd ${@:$#}
+}
+
+function take() {
+  clone_dest=$(gittake $@)
+  cd $clone_dest
 }
 
 [[ -r "$HOME/.bashrc.work" ]] && source "$HOME/.bashrc.work"

@@ -12,6 +12,7 @@ sudo apt install git
 git config --global core.filemode false
 git config --global push.autoSetupRemote true
 git config --global user.name "Zach Gharst"
+git config --global init.defaultBranch "main"
 
 ##### Add RC symbolic links #####
 git pull origin master
