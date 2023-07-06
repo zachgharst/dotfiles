@@ -402,3 +402,6 @@ xnoremap <leader>p "_dP
 set showcmd
 
 set timeoutlen=3000
+
+vmap <leader>y :w! /tmp/vitmp<CR>                                                                   
+nmap <leader>p :r! cat /tmp/vitmp<CR>
