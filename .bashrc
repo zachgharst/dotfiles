@@ -103,9 +103,15 @@ function mkcd() {
   mkdir -p $@ &&cd ${@:$#}
 }
 
-function take() {
-  clone_dest=$(gittake $@)
-  cd $clone_dest
+function gittake() {
+  path=$(echo $1 | sed -e "s/^https:\/\///" -e "s/^http:\/\///" -e "s/^www.//" | cut -f 1,2,3 -d "/")
+  project=${2:-$(basename $path)}
+  organization=$(basename $(dirname $path))
+  domain=$(dirname $(dirname $path))
+  parentDirectory="$REPOS/$domain/$organization"
+  mkdir -p $parentDirectory
+  git clone $1 "$parentDirectory/$project"
+  cd "$parentDirectory/$project"
 }
 
 [[ -r "$HOME/.bashrc.work" ]] && source "$HOME/.bashrc.work"
