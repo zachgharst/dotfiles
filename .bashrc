@@ -115,6 +115,7 @@ function gittake() {
   mkdir -p $parentDirectory
   git clone $1 "$parentDirectory/$project"
   cd "$parentDirectory/$project"
+  [[ "$domain" =~ (microsoft.com|visualstudio.com|azure.com) ]] && git config user.email "zachgharst@microsoft.com"
 }
 
 [[ -r "$HOME/.bashrc.work" ]] && source "$HOME/.bashrc.work"
