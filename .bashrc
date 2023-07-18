@@ -1,4 +1,4 @@
-#!bash
+
 
 case $- in
   *i*) ;;
@@ -10,7 +10,7 @@ esac
 
 export BROWSER=lynx
 export DOCUMENTS="$HOME/documents"
-export EDITOR="vim"
+export EDITOR="nvim"
 export GITHUB_USERNAME="zachgharst"
 export REPOS="$HOME/repos"
 export TERM=xterm-256color
@@ -74,6 +74,9 @@ alias please="sudo"
 alias mv="mv -i"
 alias rm="rm -i"
 alias cp="cp -i"
+
+alias vi='\vim'
+alias vim='$EDITOR'
 
 alias ls='ls -h --color=auto'
 alias ll='ls -alF'
