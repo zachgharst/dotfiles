@@ -393,9 +393,7 @@ nnoremap N Nzzzv
 "au fileopened * !tmux rename-window TESTING
 
 " read personal/private vim configuration (keep last to override)
-set rtp^=~/.vimpersonal
-set rtp^=~/.vimprivate
-set rtp^=~/.vimwork
+set rtp^=~/.vimrc.work
 
 xnoremap <leader>p "_dP
 
