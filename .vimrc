@@ -281,19 +281,6 @@ endfun
 "autocmd FileType perl autocmd BufWritePre <buffer> call s:Perltidy()
 endif
 
-"autocmd vimleavepre *.md !perl -p -i -e 's,(?<!\[)my `(\w+)` (package|module|repo|command|utility),[my `\1` \2](https://gitlab.com/rwxrob/\1),g' %
-
-" fill in empty markdown links with duck.com search
-" [some thing]() -> [some thing](https://duck.com/lite?kae=t&q=some thing)
-" s,/foo,/bar,g
-"autocmd vimleavepre *.md !perl -p -i -e 's,\[([^\]]+)\]\(\),[\1](https://duck.com/lite?kd=-1&kp=-1&q=\1),g' %
-
-" autocmd BufWritePost *.md silent !toemoji %
-" autocmd BufWritePost *.md silent !toduck %
-
-" fill in anything beginning with @ with a link to twitch to it
-" autocmd vimleavepre *.md !perl -p -i -e 's, @(\w+), [\\@\1](https://twitch.tv/\1),g' %
-
 " make Y consitent with D and C (yank til end)
 map Y y$
 
@@ -395,11 +382,11 @@ nnoremap N Nzzzv
 " read personal/private vim configuration (keep last to override)
 set rtp^=~/.vimrc.work
 
-xnoremap <leader>p "_dP
+" xnoremap <leader>p "_dP
 
 set showcmd
 
 set timeoutlen=3000
 
-vmap <leader>y :w! /tmp/vitmp<CR>                                                                   
-nmap <leader>p :r! cat /tmp/vitmp<CR>
+" vmap <leader>y :w! /tmp/vitmp<CR>                                                                   
+" nmap <leader>p :r! cat /tmp/vitmp<CR>
