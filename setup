@@ -4,9 +4,12 @@ set -e
 
 ##### Install programs #####
 sudo add-apt-repository ppa:git-core/ppa
-sudo apt update
-sudo apt install neofetch
-sudo apt install git
+sudo add-apt-repository ppa:neovim-ppa/unstable
+sudo apt-get update
+sudo apt-get install neofetch
+sudo apt-get install git
+sudo apt-get install neovim
+sudo apt-get install gcc
 
 ##### Command line configs #####
 git config --global core.filemode false
@@ -21,7 +24,7 @@ ln -sf "$PWD/.bashrc" "$HOME/.bashrc"
 ln -sf "$PWD/.inputrc" "$HOME/.inputrc"
 ln -sf "$PWD/.tmux.conf" "$HOME/.tmux.conf"
 ln -sf "$PWD/.vimrc" "$HOME/.vimrc"
-ln -sf "$PWD/.nvimrc" "$HOME/.nvimrc"
+ln -sf "$PWD/nvim" "$HOME/.config/nvim"
 
 ##### Install Go #####
 sudo rm -rf /usr/local/go
@@ -37,3 +40,8 @@ pomo delete interval
 go install github.com/zachgharst/emojimaker@latest
 go install github.com/zachghars/gittake@latest
 
+##### Neovim #####
+git clone --depth 1 https://github.com/wbthomason/packer.nvim\
+ ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+
+# how to do :PackerSync vim command?
