@@ -5,11 +5,15 @@ set -e
 ##### Install programs #####
 sudo add-apt-repository ppa:git-core/ppa
 sudo add-apt-repository ppa:neovim-ppa/unstable
+
 sudo apt-get update
-sudo apt-get install neofetch
-sudo apt-get install git
-sudo apt-get install neovim
+sudo apt-get upgrade
+
 sudo apt-get install gcc
+sudo apt-get install git
+sudo apt-get install neofetch
+sudo apt-get install neovim
+sudo apt-get install ripgrep
 
 ##### Command line configs #####
 git config --global core.filemode false
