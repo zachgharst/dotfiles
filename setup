@@ -9,8 +9,10 @@ sudo add-apt-repository ppa:neovim-ppa/unstable
 sudo apt-get update
 sudo apt-get upgrade
 
+sudo apt-get install ddgr
 sudo apt-get install gcc
 sudo apt-get install git
+sudo apt-get install lynx
 sudo apt-get install neofetch
 sudo apt-get install neovim
 sudo apt-get install ripgrep
@@ -42,7 +44,9 @@ pomo init
 pomo delete interval
 
 go install github.com/zachgharst/emojimaker@latest
-go install github.com/zachghars/gittake@latest
+go install github.com/zachghars/zet/cmd/zet@latest
+go clone https://github.com/zachgharst/zettels $
+zet populatedb
 
 ##### Neovim #####
 git clone --depth 1 https://github.com/wbthomason/packer.nvim\
