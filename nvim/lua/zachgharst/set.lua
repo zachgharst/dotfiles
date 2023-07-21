@@ -1,6 +1,7 @@
 vim.g.mapleader = " "
 
 vim.opt.guicursor = ""
+vim.opt.mouse = ""
 
 vim.opt.nu = true
 vim.opt.relativenumber = true
