@@ -15,8 +15,10 @@ export GITHUB_USERNAME="zachgharst"
 export REPOS="$HOME/repos"
 export TERM=xterm-256color
 
-export DOTFILES="$REPOS/github.com/$GITHUB_USERNAME/dotfiles"
-export ZETTELS="$REPOS/github.com/$GITHUB_USERNAME/zettels"
+export MYGH="$REPOS/github.com/$GITHUB_USERNAME"
+
+export DOTFILES="$MYGH/dotfiles"
+export ZETTELS="$MYGH/zettels"
 
 # go
 export GOROOT=/usr/local/go
@@ -66,7 +68,7 @@ alias ...="cd ../.."
 alias ....="cd ../../.."
 alias .....="cd ../../../.."
 alias dot='cd $DOTFILES'
-alias gh="cd $REPOS/github.com/$GITHUB_USERNAME"
+alias gh="cd $MYGH"
 alias repos="cd $REPOS"
 
 alias sudo='sudo '
