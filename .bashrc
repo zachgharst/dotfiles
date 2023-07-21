@@ -112,9 +112,13 @@ function gittake() {
   organization=$(basename $(dirname $path))
   domain=$(dirname $(dirname $path))
   parentDirectory="$REPOS/$domain/$organization"
+
+  [[ "$domain" =~ "@" ]] && echo "fatal: prefer dumb protocol over smart (no username@)" && return 1
+
   mkdir -p $parentDirectory
   git clone $1 "$parentDirectory/$project"
   cd "$parentDirectory/$project"
+
   [[ "$domain" =~ (microsoft.com|visualstudio.com|azure.com) ]] && git config user.email "zachgharst@microsoft.com"
 }
 
@@ -128,7 +132,7 @@ complete -C pomo pomo
 
 # ----------------------------------- colors -----------------------------------
 
-test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+[[ -r ~/.dircolors ]] && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
 
 # --- autoadded WHY would you modify my bashrc Rust?
 # . "$HOME/.cargo/env"
