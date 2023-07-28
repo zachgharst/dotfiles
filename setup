@@ -30,7 +30,7 @@ ln -sf "$PWD/.bashrc" "$HOME/.bashrc"
 ln -sf "$PWD/.inputrc" "$HOME/.inputrc"
 ln -sf "$PWD/.tmux.conf" "$HOME/.tmux.conf"
 ln -sf "$PWD/.vimrc" "$HOME/.vimrc"
-ln -sf "$PWD/nvim" "$HOME/.config"
+ln -sf "$PWD/nvim" "$HOME/.config/nvim"
 
 ##### Install Go #####
 sudo rm -rf /usr/local/go
