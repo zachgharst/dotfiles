@@ -39,6 +39,10 @@ wget https://go.dev/dl/go1.20.5.linux-amd64.tar.gz
 sudo tar -C /usr/local -xzf go1.20.5.linux-amd64.tar.gz
 rm go1.20.5.linux-amd64.tar.gz
 
+export GOROOT=/usr/local/go
+export GOPATH=$HOME/go
+export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
+
 ##### Install Go programs #####
 go install github.com/rwxrob/pomo/cmd/pomo@latest
 pomo init
