@@ -32,7 +32,9 @@ ln -sf "$PWD/.bashrc" "$HOME/.bashrc"
 ln -sf "$PWD/.inputrc" "$HOME/.inputrc"
 ln -sf "$PWD/.tmux.conf" "$HOME/.tmux.conf"
 ln -sf "$PWD/.vimrc" "$HOME/.vimrc"
-ln -sf "$PWD/nvim" "$HOME/.config"
+
+mkdir "$HOME/.config" || true
+ln -sf "$PWD/nvim" "$HOME/.config/nvim"
 
 ##### Install Go #####
 sudo rm -rf /usr/local/go
@@ -51,8 +53,8 @@ pomo delete interval
 
 go install github.com/zachgharst/emojimaker@latest
 go install github.com/zachgharst/zet/cmd/zet@latest
-git clone https://github.com/zachgharst/zettels $MYGH/zettels
-zet populatedb
+git clone https://github.com/zachgharst/zettels $MYGH/zettels || true
+zet populatedb || true
 
 ##### JavaScript #####
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.5/install.sh | bash
@@ -62,5 +64,6 @@ curl -fsSL https://bun.sh/install | bash
 
 ##### Neovim #####
 git clone --depth 1 https://github.com/wbthomason/packer.nvim\
- ~/.local/share/nvim/site/pack/packer/start/packer.nvim
-nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
+ ~/.local/share/nvim/site/pack/packer/start/packer.nvim || true
+# currently broken:
+#  nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
