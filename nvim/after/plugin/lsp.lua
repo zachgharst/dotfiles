@@ -3,7 +3,7 @@ local lsp = require('lsp-zero')
 lsp.preset("recommended")
 
 lsp.ensure_installed({
-	-- 'csharp_ls',
+	'csharp_ls',
 	'gopls',
     'lua_ls',
     'svelte',
