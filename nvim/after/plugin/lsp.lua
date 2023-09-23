@@ -6,6 +6,8 @@ lsp.ensure_installed({
 	-- 'csharp_ls',
 	'gopls',
     'lua_ls',
+    'svelte',
+    'tsserver',
 })
 
 
@@ -66,3 +68,4 @@ lsp.setup()
 vim.diagnostic.config({
     virtual_text = true
 })
+
