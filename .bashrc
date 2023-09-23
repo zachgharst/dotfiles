@@ -136,5 +136,16 @@ complete -C pomo pomo
 
 [[ -r ~/.dircolors ]] && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
 
-# --- autoadded WHY would you modify my bashrc Rust?
-# . "$HOME/.cargo/env"
+# Everything below this line is added by program installation
+
+# Rust
+. "$HOME/.cargo/env"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH=$BUN_INSTALL/bin:$PATH
+
+# nvm
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

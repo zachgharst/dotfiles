@@ -15,6 +15,7 @@ sudo apt-get install -y git
 sudo apt-get install -y lynx
 sudo apt-get install -y neofetch
 sudo apt-get install -y neovim
+sudo apt-get install -y nodejs
 sudo apt-get install -y ripgrep
 
 ##### Command line configs #####
@@ -47,6 +48,12 @@ go install github.com/zachgharst/emojimaker@latest
 go install github.com/zachgharst/zet/cmd/zet@latest
 git clone https://github.com/zachgharst/zettels $MYGH/zettels
 zet populatedb
+
+##### JavaScript #####
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.5/install.sh | bash
+nvm install node
+npm install -g typescript typescript-language-server svelte-language-server
+curl -fsSL https://bun.sh/install | bash
 
 ##### Neovim #####
 git clone --depth 1 https://github.com/wbthomason/packer.nvim\
