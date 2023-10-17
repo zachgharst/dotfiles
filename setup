@@ -60,6 +60,7 @@ zet populatedb || true
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.5/install.sh | bash
 nvm install node
 npm install -g typescript typescript-language-server svelte-language-server
+sudo apt-get install -y unzip
 curl -fsSL https://bun.sh/install | bash
 
 ##### Neovim #####
