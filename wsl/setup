@@ -1,4 +1,4 @@
-# PowerShell
+# Install PowerShell
 source /etc/os-release
 
 url="https://packages.microsoft.com/config/ubuntu/$VERSION_ID/packages-microsoft-prod.deb"
@@ -12,4 +12,4 @@ sudo apt-get update
 sudo apt-get install -y powershell
 
 mkdir -p "$HOME/.config/powershell" || true
-ln -sf "$PWD/wsl/Microsoft.PowerShell_profile.ps1" "$HOME/.config/powershell/Microsoft.PowerShell_profile.ps1"
+ln -sf "$PWD/Microsoft.PowerShell_profile.ps1" "$HOME/.config/powershell/Microsoft.PowerShell_profile.ps1"

@@ -139,7 +139,7 @@ complete -C pomo pomo
 
 # ----------------------------------- import -----------------------------------
 
-[[ -r "$HOME/.bashrc.work" ]] && source "$HOME/.bashrc.work"
+[[ -r "$HOME/.bashrc.microsoft" ]] && source "$HOME/.bashrc.microsoft"
 [[ -r "$HOME/.bashrc.wsl" ]] && source "$HOME/.bashrc.wsl"
 
 
