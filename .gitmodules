@@ -1,0 +1,3 @@
+[submodule "microsoft"]
+	path = microsoft
+	url = https://github.com/zachgharst/microsoft_dotfiles
