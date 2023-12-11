@@ -2,6 +2,8 @@
 
 set -e
 
+git pull origin master
+
 ##### Install programs #####
 sudo add-apt-repository -y ppa:git-core/ppa
 sudo add-apt-repository -y ppa:neovim-ppa/unstable
@@ -27,7 +29,6 @@ git config --global init.defaultBranch "main"
 git config --global credential.helper store
 
 ##### Add RC symbolic links #####
-git pull origin master
 ln -sf "$PWD/.bashrc" "$HOME/.bashrc"
 ln -sf "$PWD/.inputrc" "$HOME/.inputrc"
 ln -sf "$PWD/.tmux.conf" "$HOME/.tmux.conf"
