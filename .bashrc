@@ -1,5 +1,3 @@
-
-
 case $- in
   *i*) ;;
     *) return ;;
@@ -120,11 +118,13 @@ function gittake() {
   mkdir -p $parentDirectory
   git clone $1 "$parentDirectory/$project"
   cd "$parentDirectory/$project"
-
-  [[ "$domain" =~ (microsoft.com|visualstudio.com|azure.com) ]] && git config user.email "zachgharst@microsoft.com"
 }
 
-[[ -r "$HOME/.bashrc.work" ]] && source "$HOME/.bashrc.work"
+nbom() {
+  git checkout main
+  git pull
+  git checkout -b user/$GITHUB_USERNAME/"$1"
+}
 
 
 # ---------------------------------- complete ----------------------------------
@@ -136,7 +136,14 @@ complete -C pomo pomo
 
 [[ -r ~/.dircolors ]] && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
 
-# Everything below this line is added by program installation
+
+# ----------------------------------- import -----------------------------------
+
+[[ -r "$HOME/.bashrc.work" ]] && source "$HOME/.bashrc.work"
+[[ -r "$HOME/.bashrc.wsl" ]] && source "$HOME/.bashrc.wsl"
+
+
+# ---------------------------- program installation ----------------------------
 
 # Rust
 . "$HOME/.cargo/env"

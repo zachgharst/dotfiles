@@ -1,0 +1,15 @@
+# PowerShell
+source /etc/os-release
+
+url="https://packages.microsoft.com/config/ubuntu/$VERSION_ID/packages-microsoft-prod.deb"
+echo "Downloading microsoft ppa from $url"
+wget -q $url
+
+sudo dpkg -i packages-microsoft-prod.deb
+rm packages-microsoft-prod.deb
+
+sudo apt-get update
+sudo apt-get install -y powershell
+
+mkdir "$HOME/.config" || true
+ln -sf "$PWD/wsl/Microsft.PowerShell_profile.ps1" "$HOME/.config/powershell/Microsoft.PowerShell_profile.ps1"
