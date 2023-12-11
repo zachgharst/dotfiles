@@ -34,7 +34,7 @@ ln -sf "$PWD/.inputrc" "$HOME/.inputrc"
 ln -sf "$PWD/.tmux.conf" "$HOME/.tmux.conf"
 ln -sf "$PWD/.vimrc" "$HOME/.vimrc"
 
-mkdir "$HOME/.config" || true
+mkdir -p "$HOME/.config" || true
 ln -sf "$PWD/nvim" "$HOME/.config/nvim"
 
 ##### Install Go #####
@@ -69,3 +69,16 @@ git clone --depth 1 https://github.com/wbthomason/packer.nvim\
  ~/.local/share/nvim/site/pack/packer/start/packer.nvim || true
 # currently broken:
 #  nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
+
+##### Other setup scripts #####
+[[ -v "$WSL_DISTRO_NAME" ]] && echo "Current environment is in WSL - running WSL setup" && "$PWD/wsl/setup"
+
+response="?"
+while [ "$response" != "y" ] && [ "$response" != "n" ]; do
+  echo "Do you want to also run your microsoft setup? (y/n)"
+  read response
+done
+
+if [[ "$response" == "y" ]]; then
+  "$PWD/microsoft/setup"
+fi
