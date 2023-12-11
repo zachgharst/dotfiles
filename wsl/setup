@@ -2,7 +2,7 @@
 source /etc/os-release
 
 url="https://packages.microsoft.com/config/ubuntu/$VERSION_ID/packages-microsoft-prod.deb"
-echo "Downloading microsoft ppa from $url"
+echo "Downloading Microsoft PPA from $url"
 wget -q $url
 
 sudo dpkg -i packages-microsoft-prod.deb
