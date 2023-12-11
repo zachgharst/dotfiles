@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 set -e
 
@@ -35,7 +35,7 @@ ln -sf "$PWD/.tmux.conf" "$HOME/.tmux.conf"
 ln -sf "$PWD/.vimrc" "$HOME/.vimrc"
 
 mkdir -p "$HOME/.config" || true
-ln -sf "$PWD/nvim" "$HOME/.config/nvim"
+ln -sf "$PWD/nvim" "$HOME/.config"
 
 ##### Install Go #####
 sudo rm -rf /usr/local/go
@@ -54,31 +54,41 @@ pomo delete interval
 
 go install github.com/zachgharst/emojimaker@latest
 go install github.com/zachgharst/zet/cmd/zet@latest
+
+rm -rf $MYGH/zettels
 git clone https://github.com/zachgharst/zettels $MYGH/zettels || true
 zet populatedb || true
 
 ##### JavaScript #####
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.5/install.sh | bash
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
 nvm install node
 npm install -g typescript typescript-language-server svelte-language-server
 sudo apt-get install -y unzip
 curl -fsSL https://bun.sh/install | bash
 
 ##### Neovim #####
-git clone --depth 1 https://github.com/wbthomason/packer.nvim\
+rm -rf ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+git clone --depth 1 https://github.com/wbthomason/packer.nvim \
  ~/.local/share/nvim/site/pack/packer/start/packer.nvim || true
-# currently broken:
-#  nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
+# Currently broken:
+# nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
 
 ##### Other setup scripts #####
-[[ -v "$WSL_DISTRO_NAME" ]] && echo "Current environment is in WSL - running WSL setup" && "$PWD/wsl/setup"
+[[ -n "$WSL_DISTRO_NAME" ]] && echo "Current environment is in WSL - running WSL setup" && cd $PWD/wsl && "$PWD/setup" && cd -
 
 response="?"
-while [ "$response" != "y" ] && [ "$response" != "n" ]; do
+while [[ "$response" != "y" ]] && [[ "$response" != "n" ]]; do
   echo "Do you want to also run your microsoft setup? (y/n)"
   read response
 done
 
 if [[ "$response" == "y" ]]; then
-  "$PWD/microsoft/setup"
+  cd "$PWD/microsoft"
+  "$PWD/setup"
+  cd -
 fi
