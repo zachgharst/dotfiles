@@ -59,6 +59,16 @@ rm -rf $MYGH/zettels
 git clone https://github.com/zachgharst/zettels $MYGH/zettels || true
 zet populatedb || true
 
+##### Install Julia programs #####
+sudo rm -rf /usr/local/julia
+wget https://julialang-s3.julialang.org/bin/linux/x64/1.9/julia-1.9.4-linux-x86_64.tar.gz
+sudo tar -C /usr/bin -xzf julia-1.9.4-linux-x86_64.tar.gz
+sudo ln -s /usr/bin/julia-1.9.4/bin/julia /usr/bin/julia
+rm julia-1.9.4-linux-x86_64.tar.gz
+
+julia --project=~/.julia/environments/nvim-lspconfig -e 'using Pkg; Pkg.add("LanguageServer")'
+
+
 ##### JavaScript #####
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.5/install.sh | bash
 

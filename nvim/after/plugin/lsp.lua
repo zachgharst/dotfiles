@@ -5,6 +5,7 @@ lsp.preset("recommended")
 lsp.ensure_installed({
 	'csharp_ls',
 	'gopls',
+    'julials',
     'lua_ls',
     'svelte',
     'tsserver',

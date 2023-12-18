@@ -22,6 +22,11 @@ return require('packer').startup(function(use)
   use('theprimeagen/harpoon')
   use('mbbill/undotree')
   use('tpope/vim-fugitive')
+  use('Olical/conjure')
+  use({
+      "iamcco/markdown-preview.nvim",
+      run = function() vim.fn['mkdp#util#install']() end,
+  })
   use('github/copilot.vim')
 
   use {
