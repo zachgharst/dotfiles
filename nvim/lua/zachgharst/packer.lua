@@ -24,6 +24,9 @@ return require('packer').startup(function(use)
   use('mbbill/undotree')
   use('tpope/vim-fugitive')
   use('Olical/conjure')
+  use('othree/html5.vim')
+  use('pangloss/vim-javascript')
+  use('evanleck/vim-svelte')
   use({
     "iamcco/markdown-preview.nvim",
     run = function() vim.fn['mkdp#util#install']() end,
