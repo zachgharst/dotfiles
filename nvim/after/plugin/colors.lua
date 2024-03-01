@@ -3,7 +3,7 @@ require('rose-pine').setup({
     disable_italics = true,
 })
 
-function ApplyVimTheme(color) 
+function ApplyVimTheme(color)
 	color = color or "rose-pine"
 	vim.cmd.colorscheme(color)
 

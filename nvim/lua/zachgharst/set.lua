@@ -33,14 +33,14 @@ vim.opt.isfname:append("@-@")
 vim.opt.updatetime = 50
 
 vim.g.clipboard = {
-    name = "WslClipboard",
-    copy = {
-        ["+"] = "clip.exe",
-        ["*"] = "clip.exe",
-    },
-    paste = {
-        ["+"] = "pwsh.exe -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace(\"`r\", \"\"))",
-        ["*"] = "pwsh.exe -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace(\"`r\", \"\"))",
-    },
-    cache_enabled = 0,
+  name = "WslClipboard",
+  copy = {
+    ["+"] = "clip.exe",
+    ["*"] = "clip.exe",
+  },
+  paste = {
+    ["+"] = "pwsh.exe -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace(\"`r\", \"\"))",
+    ["*"] = "pwsh.exe -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace(\"`r\", \"\"))",
+  },
+  cache_enabled = 0,
 }
