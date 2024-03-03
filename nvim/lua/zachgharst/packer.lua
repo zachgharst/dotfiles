@@ -73,4 +73,27 @@ return require('packer').startup(function(use)
     'nvim-neotest/neotest',
     requires = { { 'Issafalcon/neotest-dotnet' } }
   })
+
+  use({
+    "epwalsh/obsidian.nvim",
+    tag = "*", -- recommended, use latest release instead of latest commit
+    requires = {
+      -- Required.
+      "nvim-lua/plenary.nvim",
+    },
+    config = function()
+      require("obsidian").setup({
+        workspaces = {
+          {
+            name = "personal",
+            path = "~/vaults/personal",
+          },
+          {
+            name = "work",
+            path = "~/vaults/work",
+          },
+        },
+      })
+    end,
+  })
 end)
