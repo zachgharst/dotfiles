@@ -10,7 +10,6 @@ obsidian.setup({
 
   daily_notes = {
     folder = "dailies",
-    alias_format = "%Y-%m-%d",
     template = "daily.md",
   },
 
