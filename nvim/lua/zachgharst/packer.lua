@@ -71,7 +71,13 @@ return require('packer').startup(function(use)
 
   use({
     'nvim-neotest/neotest',
-    requires = { { 'Issafalcon/neotest-dotnet' } }
+    requires = {
+      'nvim-neotest/nvim-nio',
+      'nvim-lua/plenary.nvim',
+      'antoinemadec/FixCursorHold.nvim',
+      'nvim-treesitter/nvim-treesitter',
+      'Issafalcon/neotest-dotnet',
+    }
   })
 
   use({
