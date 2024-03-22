@@ -10,6 +10,7 @@ obsidian.setup({
 
   daily_notes = {
     folder = "dailies",
+    alias_format = "%B %-d, %Y",
     template = "daily.md",
   },
 
@@ -25,8 +26,6 @@ obsidian.setup({
     },
   },
 })
-
-vim.opt.conceallevel = 1
 
 vim.keymap.set('n', '<leader>oo', vim.cmd.ObsidianQuickSwitch)
 vim.keymap.set('n', '<leader>on', vim.cmd.ObsidianNew)
