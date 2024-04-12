@@ -7,6 +7,7 @@ lsp.ensure_installed({
   'gopls',
   'julials',
   'lua_ls',
+  'powershell_es',
   'svelte',
   'tsserver',
 })
