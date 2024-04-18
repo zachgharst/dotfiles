@@ -27,5 +27,5 @@ vim.keymap.set("n", "<leader><leader>", function()
   vim.cmd("so")
 end)
 
-vim.keymap.set("n", "<leader>ts", "a<C-R>=system('date +%s')[0:-2]<CR><Esc>")
+vim.keymap.set("n", "<leader>dt", "a<C-R>=system('date +%s')[0:-2]<CR><Esc>")
 vim.keymap.set("n", "<leader>guid", "a<C-R>=system('uuidgen')[0:-2]<CR><Esc>")
