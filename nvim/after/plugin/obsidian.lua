@@ -30,6 +30,8 @@ obsidian.setup({
 vim.keymap.set('n', '<leader>oo', vim.cmd.ObsidianQuickSwitch)
 vim.keymap.set('n', '<leader>on', vim.cmd.ObsidianNew)
 vim.keymap.set('n', '<leader>ot', vim.cmd.ObsidianToday)
+vim.keymap.set('n', '<leader>oy', vim.cmd.ObsidianYesterday)
+vim.keymap.set('n', '<leader>or', vim.cmd.ObsidianTomorrow)
 vim.keymap.set('n', '<leader>od', vim.cmd.ObsidianDailies)
 vim.keymap.set('n', '<leader>os', vim.cmd.ObsidianSearch)
 vim.keymap.set('v', '<leader>oe', vim.cmd.ObsidianExtractNote)
