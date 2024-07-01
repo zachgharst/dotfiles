@@ -14,6 +14,8 @@ export REPOS="$HOME/repos"
 export TERM=xterm-256color
 
 export MYGH="$REPOS/github.com/$GITHUB_USERNAME"
+export VAULT="$MYGH/vault"
+export ZAX="$MYGH/zax"
 
 export DOTFILES="$MYGH/dotfiles"
 export ZETTELS="$MYGH/zettels"
@@ -68,6 +70,7 @@ alias .....="cd ../../../.."
 alias dot='cd $DOTFILES'
 alias gh="cd $MYGH"
 alias repos="cd $REPOS"
+alias vault="cd $VAULT"
 
 alias sudo='sudo '
 alias please="sudo"
@@ -141,6 +144,7 @@ complete -C pomo pomo
 
 [[ -r "$HOME/.bashrc.microsoft" ]] && source "$HOME/.bashrc.microsoft"
 [[ -r "$HOME/.bashrc.wsl" ]] && source "$HOME/.bashrc.wsl"
+[[ -r "$HOME/.bashrc.private" ]] && source "$HOME/.bashrc.private"
 
 
 # ---------------------------- program installation ----------------------------
