@@ -88,6 +88,7 @@ alias la='ls -A'
 alias ga="git add"
 alias gac="git add . && git commit"
 alias gap="git add -p"
+alias gb="git branch"
 alias gc="git commit"
 alias gp="git push"
 alias graphme="git log --oneline --graph --decorate"
