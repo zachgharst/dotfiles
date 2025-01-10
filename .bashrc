@@ -11,14 +11,16 @@ export DOCUMENTS="$HOME/documents"
 export EDITOR="nvim"
 export GITHUB_USERNAME="zachgharst"
 export REPOS="$HOME/repos"
+export SCRIPTS="$HOME/scripts"
 export TERM=xterm-256color
 
 export MYGH="$REPOS/github.com/$GITHUB_USERNAME"
+export DOTFILES="$MYGH/dotfiles"
 export VAULT="$MYGH/vault"
 export ZAX="$MYGH/zax"
 
-export DOTFILES="$MYGH/dotfiles"
-export ZETTELS="$MYGH/zettels"
+# export PATH="$PATH:$SCRIPTS/bin"
+
 
 # go
 export GOROOT=/usr/local/go
@@ -70,6 +72,7 @@ alias .....="cd ../../../.."
 alias dot='cd $DOTFILES'
 alias gh="cd $MYGH"
 alias repos="cd $REPOS"
+alias scripts="cd $SCRIPTS"
 alias vault="cd $VAULT"
 
 alias sudo='sudo '
