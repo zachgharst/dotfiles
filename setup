@@ -28,6 +28,7 @@ git config --global user.name "Zach Gharst"
 git config --global user.email "zdgharst@gmail.com"
 git config --global init.defaultBranch "main"
 git config --global credential.helper store
+# git config --global credential.helper "/mnt/c/Program\ Files/Git/mingw64/bin/git-credential-manager.exe"
 
 ##### Add RC symbolic links #####
 ln -sf "$PWD/.bashrc" "$HOME/.bashrc"
@@ -40,9 +41,9 @@ ln -sf "$PWD/nvim" "$HOME/.config"
 
 ##### Install Go #####
 sudo rm -rf /usr/local/go
-wget https://go.dev/dl/go1.22.4.linux-amd64.tar.gz
-sudo tar -C /usr/local -xzf go1.22.4.linux-amd64.tar.gz
-rm go1.22.4.linux-amd64.tar.gz
+wget https://go.dev/dl/go1.23.0.linux-amd64.tar.gz
+sudo tar -C /usr/local -xzf go1.23.0.linux-amd64.tar.gz
+rm go1.23.0.linux-amd64.tar.gz
 
 export GOROOT=/usr/local/go
 export GOPATH=$HOME/go
