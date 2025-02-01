@@ -88,4 +88,6 @@ return require('packer').startup(function(use)
       "nvim-lua/plenary.nvim",
     },
   })
+
+  use('mrcjkb/rustaceanvim')
 end)
