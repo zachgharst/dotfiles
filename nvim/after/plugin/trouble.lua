@@ -1,7 +1,13 @@
 local trouble = require('trouble')
-vim.keymap.set('n', '<leader>wx', function() trouble.toggle() end)
-vim.keymap.set('n', '<leader>ww', function() trouble.toggle('workspace_diagnostics') end)
-vim.keymap.set('n', '<leader>wd', function() trouble.toggle('document_diagnostics') end)
-vim.keymap.set('n', '<leader>wq', function() trouble.toggle('quickfix') end)
-vim.keymap.set('n', '<leader>wl', function() trouble.toggle('loclist') end)
-vim.keymap.set('n', 'gR', function() trouble.toggle('lsp_references') end)
+trouble.setup({
+  warn_no_results = false,
+  open_no_results = true,
+})
+
+vim.keymap.set('n', '<leader>wx', "<cmd>Trouble<cr>")
+vim.keymap.set('n', '<leader>ww', "<cmd>Trouble diagnostics toggle<cr>")
+vim.keymap.set('n', '<leader>wd', "<cmd>Trouble diagnostics toggle filter.buf=0<cr>")
+vim.keymap.set('n', '<leader>ws', "<cmd>Trouble symbols toggle focus=false<cr>")
+vim.keymap.set('n', '<leader>wr', "<cmd>Trouble loclist toggle<cr>")
+vim.keymap.set('n', '<leader>wl', "<cmd>Trouble lsp toggle focus=false win.position=right<cr>")
+vim.keymap.set('n', '<leader>wq', "<cmd>Trouble lsp toggle focus=false win.position=right<cr>")
