@@ -68,7 +68,16 @@ function ...... { Set-Location -Path "../../../../.." }
 
 ### Aliases ###
 function which { Get-Command }
-function profile { code $PROFILE }
+function profile { . $env:EDITOR $PROFILE }
+
+function vim() {
+    param (
+        [Parameter(position = 0, Mandatory = $False)]
+        [string] $path
+    )
+
+    nvim $path
+}
 
 function mkcd() {
     param (
