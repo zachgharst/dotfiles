@@ -8,6 +8,7 @@ esac
 
 export BROWSER=lynx
 export DOCUMENTS="$HOME/documents"
+export DOWNLOADS="$HOME/downloads"
 export EDITOR="nvim"
 export GITHUB_USERNAME="zachgharst"
 export REPOS="$HOME/repos"
@@ -21,6 +22,9 @@ export ZAX="$MYGH/zax"
 
 # export PATH="$PATH:$SCRIPTS/bin"
 
+# dotnet
+export DOTNET_ROOT=$HOME/.dotnet
+export PATH=$HOME/.dotnet:$HOME/.local/share/nvim/mason/packages/omnisharp:$PATH
 
 # go
 export GOROOT=/usr/local/go
