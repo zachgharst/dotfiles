@@ -20,6 +20,10 @@ lsp.configure('lua_ls', {
   }
 })
 
+lsp.configure('powershell_es', {
+  bundle_path = vim.fn.stdpath('data') .. '/mason/packages/powershell-editor-services',
+})
+
 lsp.configure('omnisharp', {
   cmd = { "OmniSharp", "--languageserver", "--hostPID", tostring(vim.fn.getpid()) },
 })
