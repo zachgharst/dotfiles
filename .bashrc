@@ -20,7 +20,7 @@ export DOTFILES="$MYGH/dotfiles"
 export VAULT="$MYGH/vault"
 export ZAX="$MYGH/zax"
 
-# export PATH="$PATH:$SCRIPTS/bin"
+export PATH="$PATH:$SCRIPTS/bin"
 
 # dotnet
 export DOTNET_ROOT=$HOME/.dotnet
