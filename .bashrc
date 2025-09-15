@@ -4,6 +4,12 @@ case $- in
 esac
 
 
+# ----------------------------------- shopts -----------------------------------
+
+shopt -s autocd
+shopt -s cdspell
+
+
 # -------------------------------- env variables -------------------------------
 
 export BROWSER=lynx
