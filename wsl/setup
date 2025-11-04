@@ -1,15 +1,30 @@
-# Install PowerShell
-source /etc/os-release
+#!/usr/bin/env bash
 
-url="https://packages.microsoft.com/config/ubuntu/$VERSION_ID/packages-microsoft-prod.deb"
-echo "Downloading Microsoft PPA from $url"
-wget -q $url
+function install_powershell() {
+    source /etc/os-release
 
-sudo dpkg -i packages-microsoft-prod.deb
-rm packages-microsoft-prod.deb
+    url="https://packages.microsoft.com/config/ubuntu/$VERSION_ID/packages-microsoft-prod.deb"
+    echo "Downloading Microsoft PPA from $url"
+    wget -q $url
 
-sudo apt-get update
-sudo apt-get install -y powershell
+    sudo dpkg -i packages-microsoft-prod.deb
+    rm packages-microsoft-prod.deb
 
-mkdir -p "$HOME/.config/powershell" || true
-ln -sf "$PWD/Microsoft.PowerShell_profile.ps1" "$HOME/.config/powershell/Microsoft.PowerShell_profile.ps1"
+    sudo apt-get update
+    sudo apt-get install -y powershell
+
+    mkdir -p "$HOME/.config/powershell" || true
+    ln -sf "$PWD/Microsoft.PowerShell_profile.ps1" "$HOME/.config/powershell/Microsoft.PowerShell_profile.ps1"
+}
+
+function configure_git() {
+    git config --global credential.helper "/mnt/c/Program\ Files/Git/mingw64/bin/git-credential-manager.exe"
+}
+
+function add_config_files() {
+    ln -sf "$PWD/.bashrc.wsl" "$HOME/.bashrc.wsl"
+}
+
+install_powershell
+configure_git
+add_config_files

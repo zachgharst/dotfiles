@@ -1,4 +1,52 @@
-#!/bin/bash
+#!/usr/bin/env bash
+
+# set the working directory to the script directory
+original_dir="$PWD"
+cd "$(dirname "$0")"
+
+function get_latest_dotfiles() {
+    git pull origin master
+}
+
+function install_basic_programs() {
+    sudo add-apt-repository -y ppa:git-core/ppa
+    sudo add-apt-repository -y ppa:neovim-ppa/unstable
+
+    sudo apt-get update
+    sudo apt-get upgrade
+
+    sudo apt-get install -y ddgr
+    sudo apt-get install -y gcc
+    sudo apt-get install -y git
+    sudo apt-get install -y jq
+    sudo apt-get install -y lynx
+    sudo apt-get install -y neofetch
+    sudo apt-get install -y neovim
+    sudo apt-get install -y nodejs
+    sudo apt-get install -y ripgrep
+}
+
+function configure_git() {
+    git config --global core.filemode false
+    git config --global push.autoSetupRemote true
+    git config --global user.name "Zach Gharst"
+    git config --global user.email "zdgharst@gmail.com"
+    git config --global init.defaultBranch "main"
+    git config --global credential.helper store
+}
+
+function add_config_files() {
+    ln -sf "$PWD/.bashrc" "$HOME/.bashrc"
+    ln -sf "$PWD/.inputrc" "$HOME/.inputrc"
+    ln -sf "$PWD/.tmux.conf" "$HOME/.tmux.conf"
+    ln -sf "$PWD/.vimrc" "$HOME/.vimrc"
+
+    mkdir -p "$HOME/.config" || true
+    ln -sf "$PWD/nvim" "$HOME/.config"
+
+    touch "$HOME/.hushlogin"
+
+}
 
 function install_go() {
     local version="$1"
@@ -13,10 +61,19 @@ function install_go() {
     export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
 }
 
+function install_go_programs() {
+    go install github.com/rwxrob/pomo/cmd/pomo@latest
+    pomo init
+    pomo delete interval
+
+    go install github.com/zachgharst/emojimaker@latest
+    go install github.com/zachgharst/mfe@latest
+    go install github.com/zachgharst/zax@latest
+}
+
 function install_node() {
     local nvm_version="$1"
 
-    # todo: get latest version automatically
     curl -o- "https://raw.githubusercontent.com/nvm-sh/nvm/v$nvm_version/install.sh" | bash
 
     export NVM_DIR="$HOME/.nvm"
@@ -28,78 +85,42 @@ function install_node() {
     curl -fsSL https://bun.sh/install | bash
 }
 
-git pull origin master
+function install_neovim_plugins() {
+    # todo: do I stop using packer?
+    rm -rf ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+    git clone --depth 1 https://github.com/wbthomason/packer.nvim \
+     ~/.local/share/nvim/site/pack/packer/start/packer.nvim || true
+    # Currently broken:
+    # nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
+}
 
-##### Install programs #####
-sudo add-apt-repository -y ppa:git-core/ppa
-sudo add-apt-repository -y ppa:neovim-ppa/unstable
+function install_wsl_utils() {
+    cd $PWD/wsl && "$PWD/setup" && cd -
+}
 
-sudo apt-get update
-sudo apt-get upgrade
+funcion run_private_microsoft_setup() {
+    response="?"
+    while [[ "$response" != "y" ]] && [[ "$response" != "n" ]]; do
+      echo "Do you want to also run your microsoft setup? (y/n)"
+      read response
+    done
 
-sudo apt-get install -y ddgr
-sudo apt-get install -y gcc
-sudo apt-get install -y git
-sudo apt-get install -y jq
-sudo apt-get install -y lynx
-sudo apt-get install -y neofetch
-sudo apt-get install -y neovim
-sudo apt-get install -y nodejs
-sudo apt-get install -y ripgrep
+    if [[ "$response" == "y" ]]; then
+      cd "$PWD/microsoft"
+      "$PWD/setup"
+      cd -
+    fi
+}
 
-##### Command line configs #####
-git config --global core.filemode false
-git config --global push.autoSetupRemote true
-git config --global user.name "Zach Gharst"
-git config --global user.email "zdgharst@gmail.com"
-git config --global init.defaultBranch "main"
-git config --global credential.helper store
+get_latest_dotfiles
+install_basic_programs
+configure_git
+add_config_files
+install_go "1.25.0" #todo: get latest version automatically
+install_go_programs
+install_node "0.39.5" #todo: get latest version automatically
+# install_neovim_plugins
+[[ -n "$WSL_DISTRO_NAME" ]] && install_wsl_utils
+run_private_microsoft_setup
 
-##### Add RC symbolic links #####
-ln -sf "$PWD/.bashrc" "$HOME/.bashrc"
-ln -sf "$PWD/.inputrc" "$HOME/.inputrc"
-ln -sf "$PWD/.tmux.conf" "$HOME/.tmux.conf"
-ln -sf "$PWD/.vimrc" "$HOME/.vimrc"
-
-mkdir -p "$HOME/.config" || true
-ln -sf "$PWD/nvim" "$HOME/.config"
-
-##### Install Go #####
-install_go "1.25.0"
-
-##### Install Go programs #####
-go install github.com/rwxrob/pomo/cmd/pomo@latest
-pomo init
-pomo delete interval
-
-go install github.com/zachgharst/emojimaker@latest
-go install github.com/zachgharst/zax@latest
-
-##### JavaScript #####
-install_node "0.39.5"
-
-##### Neovim #####
-# todo: do I stop using packer?
-rm -rf ~/.local/share/nvim/site/pack/packer/start/packer.nvim
-git clone --depth 1 https://github.com/wbthomason/packer.nvim \
- ~/.local/share/nvim/site/pack/packer/start/packer.nvim || true
-# Currently broken:
-# nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
-
-##### Other #####
-touch ~/.hushlogin
-
-##### Other setup scripts #####
-[[ -n "$WSL_DISTRO_NAME" ]] && echo "Current environment is in WSL - running WSL setup" && cd $PWD/wsl && "$PWD/setup" && cd -
-
-response="?"
-while [[ "$response" != "y" ]] && [[ "$response" != "n" ]]; do
-  echo "Do you want to also run your microsoft setup? (y/n)"
-  read response
-done
-
-if [[ "$response" == "y" ]]; then
-  cd "$PWD/microsoft"
-  "$PWD/setup"
-  cd -
-fi
+cd $original_dir
