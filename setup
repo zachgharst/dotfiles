@@ -98,7 +98,7 @@ function install_wsl_utils() {
     cd $PWD/wsl && "$PWD/setup" && cd -
 }
 
-funcion run_private_microsoft_setup() {
+function run_private_microsoft_setup() {
     response="?"
     while [[ "$response" != "y" ]] && [[ "$response" != "n" ]]; do
       echo "Do you want to also run your microsoft setup? (y/n)"
