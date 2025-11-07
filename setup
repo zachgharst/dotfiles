@@ -80,6 +80,8 @@ function install_go_programs() {
 
     go install github.com/zachgharst/emojimaker@latest
     go install github.com/zachgharst/mfe@latest
+
+    $HOME/repos/github.com/zachgharst/zax/install
 }
 
 function install_node() {
@@ -127,6 +129,7 @@ get_latest_dotfiles
 install_basic_programs
 configure_git
 add_config_files
+clone_repos
 install_go "1.25.0" #todo: get latest version automatically
 install_go_programs
 install_node "0.39.5" #todo: get latest version automatically
