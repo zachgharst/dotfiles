@@ -21,6 +21,7 @@ function install_basic_programs() {
     sudo apt-get install -y git
     sudo apt-get install -y jq
     sudo apt-get install -y lynx
+    sudo apt-get install -y make
     sudo apt-get install -y neofetch
     sudo apt-get install -y neovim
     sudo apt-get install -y nodejs
@@ -69,7 +70,6 @@ function install_go_programs() {
 
     go install github.com/zachgharst/emojimaker@latest
     go install github.com/zachgharst/mfe@latest
-    go install github.com/zachgharst/zax@latest
 }
 
 function install_node() {
