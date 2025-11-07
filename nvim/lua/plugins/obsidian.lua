@@ -1,6 +1,9 @@
 return {
   "epwalsh/obsidian.nvim",
-  dependencies = { "nvim-lua/plenary.nvim" },
+  dependencies = { 
+    { "nvim-lua/plenary.nvim" },
+    { "hrsh7th/nvim-cmp" },
+  },
   lazy = true,
   event = {
       -- If you want to use the home shortcut '~' here you need to call 'vim.fn.expand'.
