@@ -17,6 +17,13 @@ function install_powershell() {
     ln -sf "$PWD/Microsoft.PowerShell_profile.ps1" "$HOME/.config/powershell/Microsoft.PowerShell_profile.ps1"
 }
 
+function install_programs() {
+    sudo apt update
+    sudo apt install -y wslu
+
+    install_powershell
+}
+
 function configure_git() {
     git config --global credential.helper "/mnt/c/Program\ Files/Git/mingw64/bin/git-credential-manager.exe"
 }
@@ -25,6 +32,6 @@ function add_config_files() {
     ln -sf "$PWD/.bashrc.wsl" "$HOME/.bashrc.wsl"
 }
 
-install_powershell
+install_programs
 configure_git
 add_config_files
