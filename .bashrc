@@ -83,7 +83,6 @@ alias dot='cd $DOTFILES'
 alias ghr="cd $MYGH"
 alias repos="cd $REPOS"
 alias scripts="cd $SCRIPTS"
-alias vault="cd $VAULT"
 
 alias sudo='sudo '
 alias please="sudo"
@@ -137,10 +136,16 @@ function gittake() {
   cd "$parentDirectory/$project"
 }
 
-nbom() {
+function nbom() {
   git checkout main
   git pull
   git checkout -b user/$GITHUB_USERNAME/"$1"
+}
+
+function vault() {
+  cd $VAULT
+  tmux rename-window vault
+  $EDITOR .
 }
 
 
