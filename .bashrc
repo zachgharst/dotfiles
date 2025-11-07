@@ -102,9 +102,11 @@ alias gac="git add . && git commit"
 alias gap="git add -p"
 alias gb="git branch"
 alias gc="git commit"
+alias gco="git checkout"
 alias gp="git push"
 alias graphme="git log --oneline --graph --decorate"
 alias gs="git status"
+alias gsw="git switch"
 
 alias '?'="ddgr"
 alias chmox='chmod +x'
