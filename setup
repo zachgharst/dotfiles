@@ -47,7 +47,17 @@ function add_config_files() {
     ln -sf "$PWD/nvim" "$HOME/.config"
 
     touch "$HOME/.hushlogin"
+}
 
+function clone_repos() {
+    local destination_dir="$HOME/repos/github.com/zachgharst"
+    local zax_dir="$destination_dir/zax"
+    local vault_dir="$destination_dir/vault"
+
+    mkdir -p "$destination_dir"
+
+    [ -d "$zax_dir" ] || git clone https://github.com/zachgharst/zax "$destination_dir/zax"
+    [ -d "$vault_dir" ] || git clone https://github.com/zachgharst/vault "$destination_dir/vault"
 }
 
 function install_go() {
