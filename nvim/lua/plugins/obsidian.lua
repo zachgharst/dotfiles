@@ -46,5 +46,6 @@ return {
     { "<leader>os", vim.cmd.ObsidianSearch, desc = "Obsidian: Search" },
     { "<leader>oe", vim.cmd.ObsidianExtractNote, mode = "v", desc = "Obsidian: Extract Note" },
     { "<leader>oi", vim.cmd.ObsidianPasteImg, mode = "v", desc = "Obsidian: Paste Image" },
+    { "<leader>og", vim.cmd.ObsidianTags, desc = "Obsidian: Tags" },
   },
 }
