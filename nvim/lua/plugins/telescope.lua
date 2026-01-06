@@ -1,7 +1,6 @@
 return {
   "nvim-telescope/telescope.nvim",
   cmd = "Telescope",
-  tag = "0.1.8",
   dependencies = { "nvim-lua/plenary.nvim" },
   keys = {
     { "<C-p>", "<cmd>Telescope git_files<CR>", desc = "Telescope: Git Files" },
