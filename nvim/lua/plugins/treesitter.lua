@@ -26,4 +26,5 @@ return {
       "xml",
       "yaml",
     })
+  end,
 }
