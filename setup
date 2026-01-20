@@ -48,6 +48,7 @@ function add_config_files() {
     ln -sf "$PWD/nvim" "$HOME/.config"
 
     touch "$HOME/.hushlogin"
+    dircolors -p | sed 's/;42/;01/' > ~/.dircolors # Remove green background for o+w
 }
 
 function clone_repos() {
