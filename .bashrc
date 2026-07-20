@@ -80,7 +80,7 @@ alias ...="cd ../.."
 alias ....="cd ../../.."
 alias .....="cd ../../../.."
 alias dot='cd $DOTFILES'
-alias ghr="cd $MYGH"
+alias mygh="cd $MYGH"
 alias repos="cd $REPOS"
 alias scripts="cd $SCRIPTS"
 
