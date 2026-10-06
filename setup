@@ -60,6 +60,13 @@ function clone_repos() {
 
     [ -d "$zax_dir" ] || git clone https://github.com/zachgharst/zax "$destination_dir/zax"
     [ -d "$vault_dir" ] || git clone https://github.com/zachgharst/vault "$destination_dir/vault"
+
+    if [ -e "$HOME/vault" ] && [ ! -L "$HOME/vault" ]; then
+        echo "Cannot create $HOME/vault symlink because the path already exists." >&2
+        return 1
+    fi
+
+    ln -sfn "$vault_dir" "$HOME/vault"
 }
 
 function install_go() {
