@@ -26,6 +26,7 @@ export MYGH="$REPOS/github.com/$GITHUB_USERNAME"
 export DOTFILES="$MYGH/dotfiles"
 export VAULT="$MYGH/vault"
 export ZAX="$MYGH/zax"
+export TODO="$VAULT/personal/TODO.md"
 
 export PATH="$PATH:$SCRIPTS/bin"
 
@@ -115,7 +116,7 @@ alias clear='printf "\e[H\e[2J"'
 alias myip="curl http://ipecho.net/plain; echo"
 alias myips="ifconfig -a | grep -o 'inet6\? \(addr:\)\?\s\?\(\(\([0-9]\+\.\)\{3\}[0-9]\+\)\|[a-fA-F0-9:]\+\)' | awk '{ sub(/inet6? (addr:)? ?/, \"\"); print }'"
 alias path='echo -e ${PATH//:/\\n}'
-alias todo='$EDITOR $DOCUMENTS/todo.md'
+alias todo='$EDITOR "$TODO"'
 
 
 # ---------------------------------- functions ---------------------------------
