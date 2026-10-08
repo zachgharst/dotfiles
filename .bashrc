@@ -109,6 +109,7 @@ alias graphme="git log --oneline --graph --decorate"
 alias gs="git status"
 alias gsw="git switch"
 
+alias acp="agency copilot"
 alias '?'="ddgr"
 alias chmox='chmod +x'
 alias c='printf "\e[H\e[2J"'
